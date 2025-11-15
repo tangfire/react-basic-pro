@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, {useRef, useState} from 'react';
 
 const CommentForm = ({ onAddComment }) => {
     const [author, setAuthor] = useState("");
     const [content, setContent] = useState("");
+    const inputRef = useRef(null);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -10,6 +11,7 @@ const CommentForm = ({ onAddComment }) => {
             onAddComment(author, content);
             setAuthor("");
             setContent("");
+            inputRef.current.focus();
         } else {
             alert("请填写完整信息！");
         }
@@ -27,6 +29,7 @@ const CommentForm = ({ onAddComment }) => {
                         value={author}
                         onChange={(e) => setAuthor(e.target.value)}
                         placeholder="请输入您的姓名"
+                        ref={inputRef}
                     />
                 </div>
                 <div className="form-group">
