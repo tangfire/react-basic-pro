@@ -12,11 +12,11 @@ const router = createBrowserRouter([
         element: <Layout/>,
         children: [
             {
-                path: 'board',
+                index: true,
                 element: <Board/>,
             },
             {
-                path: 'about',
+                path: 'About',
                 element: <About/>,
             }
         ]
