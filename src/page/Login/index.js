@@ -7,7 +7,10 @@ const Login = () =>{
         {/*声明式写法*/}
         <Link to="/article">跳转到文章页</Link>
         {/*命令式写法*/}
-        <button onClick={()=>navigate('/article')}>跳转到文章页</button>
+        <button onClick={() => navigate('/article')}>跳转到文章页</button>
+        <button onClick={() => navigate('/article?id=100&name=jack')}>searchParams</button>
+        <button onClick={() => navigate('/article/1001')}>params传参</button>
+
     </div>
 }
 
